@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book a Space | Tambayanan</title>
+
+    <!-- PyScript -->
+    <link rel="stylesheet"
+          href="https://pyscript.net/releases/2025.3.1/core.css">
+    <script type="module"
+            src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/booking.css">
+    
+</head>
+
+<body>
+
+      <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="container nav">
+
+            <a class="brand" href="index.html">
+                <span class="brand-mark">V</span>
+                VacantSpace
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="spaces.html">Our Spaces</a>
+                <a href="pricing.html">Pricing</a>
+                <a class="active" href="about.html">About</a>
+                <a href="booking.html">Book Now</a>
+            </nav>
+
+            <a class="btn" href="pricing.html#estimator">
+                Check rates ↗
+            </a>
+
+        </div>
+    </header>
+
+    <!-- Booking Section -->
+    <main class="container">
+
+        <section class="intro">
+            <p class="kicker">RESERVE YOUR SPACE</p>
+            <h1>Book your visit.</h1>
+            <p>Choose your space, schedule, and payment method.</p>
+        </section>
+
+        <!-- Booking Form -->
+        <section class="booking-card">
+
+            <div class="field">
+                <label for="area">Choose a Space</label>
+                <select id="area">
+                    <option value="chill">Chill Zone - ₱20/hour</option>
+                    <option value="study">Quiet Study Room - ₱25/hour</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="booking-date">Booking Date</label>
+                <input type="date" id="booking-date" required>
+            </div>
+
+            <div class="field">
+                <label for="booking-time">Start Time</label>
+                <select id="booking-time">
+                    <option value="09:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="hours">Duration (Hours)</label>
+                <input
+                    type="number"
+                    id="hours"
+                    min="1"
+                    max="8"
+                    step="1"
+                    value="1"
+                    required
+                >
+            </div>
+
+            <div class="field">
+                <label for="payment">Payment Method</label>
+                <select id="payment">
+                    <option value="Cash">Cash at Venue</option>
+                    <option value="GCash">GCash</option>
+                </select>
+            </div>
+
+            <!-- Booking Button -->
+            <button type="button" class="btn" py-click="book_space">
+                Confirm Booking
+            </button>
+
+            <!-- Booking Result -->
+            <div id="result" class="result" aria-live="polite">
+                <h2>Booking Summary</h2>
+                <p>Your booking details will appear here.</p>
+            </div>
+
+        </section>
+
+        
+
+    </main>
+
+    <!-- Python File -->
+    <script type="py" src="pyscript/booking.py"></script>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pricing | Tambayanan</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://pyscript.net/releases/2025.3.1/core.css"
+    >
+
+    <script
+        type="module"
+        src="https://pyscript.net/releases/2025.3.1/core.js"
+    ></script>
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="container nav">
+
+            <a class="brand" href="index.html">
+                <span class="brand-mark">T</span>
+                Tambayanan
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="spaces.html">Our Spaces</a>
+                <a class="active" href="pricing.html">Pricing</a>
+            
+                <a href="about.html">About</a>
+            </nav>
+
+            <a class="btn" href="#estimator">
+                Check rates ↗
+            </a>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+
+                <div class="kicker">Student-Friendly Rates</div>
+
+                <h1>Time well spent.</h1>
+
+                <p>
+                  Affordable hourly rates for students to relax, hang out with friends, or study between classes. Final prices may change based on operating costs and student feedback.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Pricing Cards -->
+        <section class="section">
+            <div class="container">
+
+                <div class="price-grid">
+
+                    <!-- Chill Zone Pricing -->
+                    <article class="price-card">
+
+                        <div class="kicker">Social time</div>
+
+                        <h3>Chill Zone</h3>
+
+                        <p>Relax or catch up with friends.</p>
+
+                        <div class="price">
+                            ₱20 <small>/ hour</small>
+                        </div>
+
+                        <ul>
+                            <li>Comfortable shared seating</li>
+                            <li>Wi-Fi access</li>
+                            <li>Charging access</li>
+                        </ul>
+
+                        <a class="btn btn-light" href="#estimator">
+                            Estimate cost
+                        </a>
+
+                    </article>
+
+                    <!-- Quiet Study Room Pricing -->
+                    <article class="price-card featured">
+
+                        <div class="kicker" style="color: #d8aa70">
+                            Focus time
+                        </div>
+
+                        <h3>Quiet Study Room</h3>
+
+                        <p>A calmer space for schoolwork.</p>
+
+                        <div class="price">
+                            ₱25 <small>/ hour</small>
+                        </div>
+
+                        <ul>
+                            <li>Study desk and chair</li>
+                            <li>Quiet-room rules</li>
+                            <li>Wi-Fi and charging</li>
+                        </ul>
+
+                        <a class="btn" href="#estimator">
+                            Estimate cost
+                        </a>
+
+                    </article>
+
+                    <!-- Three-Hour Pass -->
+                    <article class="price-card">
+
+                        <div class="kicker">Longer break</div>
+
+                        <h3>Chill 3-Hour Pass</h3>
+
+                        <p>Stay a little longer and unwind.</p>
+
+                        <div class="price">
+                            ₱50 <small>/ 3 hours</small>
+                        </div>
+
+                        <ul>
+                            <li>Shared Chill Zone</li>
+                            <li>Wi-Fi access</li>
+                            <li>Charging access</li>
+                        </ul>
+
+                        <a class="btn btn-light" href="#estimator">
+                            Estimate hourly cost
+                        </a>
+
+                    </article>
+
+                </div>
+
+            
+
+            </div>
+        </section>
+
+        <!-- Price Estimator -->
+        <section id="estimator" class="section section-cream">
+            <div class="container">
+
+                <div class="estimator">
+
+                    <!-- Estimator Description -->
+                    <div class="estimator-copy">
+
+                        <div class="kicker">Plan your visit</div>
+
+                        <h2>Price estimator</h2>
+
+                        <p>
+                            Choose your preferred space and enter how long
+                            you want to stay. The total updates when you
+                            calculate.
+                        </p>
+
+                        <p class="fineprint">
+                            This is a frontend demo. It does not reserve
+                            a seat or process payments.
+                        </p>
+
+                    </div>
+
+                    <!-- Estimator Form -->
+                    <div class="estimator-form">
+
+                        <div class="field">
+                            <label for="area">Choose an area</label>
+
+                            <select id="area">
+                                <option value="chill">
+                                    Chill Zone — ₱20/hour
+                                </option>
+
+                                <option value="study">
+                                    Quiet Study Room — ₱25/hour
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="hours">Number of hours</label>
+
+                            <input
+                                id="hours"
+                                type="number"
+                                min="0.5"
+                                step="0.5"
+                                value="1"
+                                placeholder="e.g. 2"
+                            >
+                        </div>
+
+                        <button
+                            class="btn"
+                            type="button"
+                            py-click="calculate_price"
+                        >
+                            Calculate price ↗
+                        </button>
+
+                        <button
+                            class="btn btn-light"
+                            type="button"
+                            py-click="reset_estimator"
+                        >
+                            Reset
+                        </button>
+
+                        <!-- Calculation Result -->
+                        <div class="result" aria-live="polite">
+
+                            <span>Estimated total</span>
+
+                            <strong id="price-result">
+                                ₱20.00
+                            </strong>
+
+                            <p id="price-details">
+                                Chill Zone · 1 hour · ₱20/hour
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PyScript -->
+    <script type="py" src="pyscript/main.py"></script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-top">
+
+                <div>
+                    <a
+                        class="brand"
+                        style="color: white"
+                        href="index.html"
+                    >
+                        <span
+                            class="brand-mark"
+                            style="background: #d8aa70; color: #173f35"
+                        >
+                            V
+                        </span>
+
+                        VacantSpace
+                    </a>
+
+                    <p>
+                        A little space to recharge, catch up with friends,
+                        and make your vacant hours count.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="spaces.html">Our Spaces</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="booking.html">Book Now</a>
+                    <a href="about.html">About</a>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <span>
+                    Developer | Jek · Student Tambayanan
+                </span>
+
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
